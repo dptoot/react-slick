@@ -42,12 +42,14 @@ var helpers = {
     var listWidth = this.getWidth(this.refs.list.getDOMNode());
     var trackWidth = this.getWidth(this.refs.track.getDOMNode());
     var slideWidth = this.getWidth(this.getDOMNode())/props.slidesToShow;
+    var currentSlide = (this.state.currentSlide === props.initialSlide) ? this.state.currentSlide : props.initialSlide;
 
     this.setState({
       slideCount: slideCount,
       slideWidth: slideWidth,
       listWidth: listWidth,
-      trackWidth: trackWidth
+      trackWidth: trackWidth,
+      currentSlide: currentSlide
     }, function () {
 
       var targetLeft = getTrackLeft(assign({
@@ -58,9 +60,6 @@ var helpers = {
       var trackStyle = getTrackCSS(assign({left: targetLeft}, props, this.state));
 
       this.setState({trackStyle: trackStyle});
-
-      // Animate slider to initial slide passed as props 
-      this.slideHandler(props.initialSlide);
     });
   },
   getWidth: function getWidth(elem) {
