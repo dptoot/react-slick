@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"));
+		module.exports = factory(require("react"), require("react-dom"));
 	else if(typeof define === 'function' && define.amd)
-		define(["react"], factory);
+		define(["react", "react-dom"], factory);
 	else if(typeof exports === 'object')
-		exports["Slider"] = factory(require("react"));
+		exports["Slider"] = factory(require("react"), require("react-dom"));
 	else
-		root["Slider"] = factory(root["React"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_2__) {
+		root["Slider"] = factory(root["React"], root["ReactDOM"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_6__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -72,19 +72,19 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _innerSlider = __webpack_require__(3);
 
-	var _objectAssign = __webpack_require__(6);
+	var _objectAssign = __webpack_require__(7);
 
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-	var _json2mq = __webpack_require__(16);
+	var _json2mq = __webpack_require__(17);
 
 	var _json2mq2 = _interopRequireDefault(_json2mq);
 
-	var _reactResponsiveMixin = __webpack_require__(18);
+	var _reactResponsiveMixin = __webpack_require__(19);
 
 	var _reactResponsiveMixin2 = _interopRequireDefault(_reactResponsiveMixin);
 
-	var _defaultProps = __webpack_require__(11);
+	var _defaultProps = __webpack_require__(12);
 
 	var _defaultProps2 = _interopRequireDefault(_defaultProps);
 
@@ -188,27 +188,27 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _mixinsEventHandlers2 = _interopRequireDefault(_mixinsEventHandlers);
 
-	var _mixinsHelpers = __webpack_require__(7);
+	var _mixinsHelpers = __webpack_require__(8);
 
 	var _mixinsHelpers2 = _interopRequireDefault(_mixinsHelpers);
 
-	var _initialState = __webpack_require__(10);
+	var _initialState = __webpack_require__(11);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
-	var _defaultProps = __webpack_require__(11);
+	var _defaultProps = __webpack_require__(12);
 
 	var _defaultProps2 = _interopRequireDefault(_defaultProps);
 
-	var _classnames = __webpack_require__(12);
+	var _classnames = __webpack_require__(13);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _track = __webpack_require__(13);
+	var _track = __webpack_require__(14);
 
-	var _dots = __webpack_require__(14);
+	var _dots = __webpack_require__(15);
 
-	var _arrows = __webpack_require__(15);
+	var _arrows = __webpack_require__(16);
 
 	var InnerSlider = _react2['default'].createClass({
 	  displayName: 'InnerSlider',
@@ -357,7 +357,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _trackHelper = __webpack_require__(5);
 
-	var _objectAssign = __webpack_require__(6);
+	var _objectAssign = __webpack_require__(7);
 
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
@@ -521,7 +521,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _reactDom = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-dom\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _reactDom = __webpack_require__(6);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -640,6 +640,12 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 6 */
 /***/ function(module, exports) {
 
+	module.exports = __WEBPACK_EXTERNAL_MODULE_6__;
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
 	'use strict';
 
 	function ToObject(val) {
@@ -669,7 +675,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -684,17 +690,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-dom\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _reactDom = __webpack_require__(6);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _reactLibReactTransitionEvents = __webpack_require__(8);
+	var _reactLibReactTransitionEvents = __webpack_require__(9);
 
 	var _reactLibReactTransitionEvents2 = _interopRequireDefault(_reactLibReactTransitionEvents);
 
 	var _trackHelper = __webpack_require__(5);
 
-	var _objectAssign = __webpack_require__(6);
+	var _objectAssign = __webpack_require__(7);
 
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
@@ -962,7 +968,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -978,7 +984,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	var ExecutionEnvironment = __webpack_require__(9);
+	var ExecutionEnvironment = __webpack_require__(10);
 
 	/**
 	 * EVENT_NAME_MAP is used to determine which event fired when a
@@ -1051,23 +1057,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	var ReactTransitionEvents = {
-	  addEndEventListener: function(node, eventListener) {
+	  addEndEventListener: function (node, eventListener) {
 	    if (endEvents.length === 0) {
 	      // If CSS transitions are not supported, trigger an "end animation"
 	      // event immediately.
 	      window.setTimeout(eventListener, 0);
 	      return;
 	    }
-	    endEvents.forEach(function(endEvent) {
+	    endEvents.forEach(function (endEvent) {
 	      addEventListener(node, endEvent, eventListener);
 	    });
 	  },
 
-	  removeEndEventListener: function(node, eventListener) {
+	  removeEndEventListener: function (node, eventListener) {
 	    if (endEvents.length === 0) {
 	      return;
 	    }
-	    endEvents.forEach(function(endEvent) {
+	    endEvents.forEach(function (endEvent) {
 	      removeEventListener(node, endEvent, eventListener);
 	    });
 	  }
@@ -1075,9 +1081,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = ReactTransitionEvents;
 
-
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
 	/**
@@ -1091,14 +1096,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @providesModule ExecutionEnvironment
 	 */
 
-	/*jslint evil: true */
+	'use strict';
 
-	"use strict";
-
-	var canUseDOM = !!(
-	  (typeof window !== 'undefined' &&
-	  window.document && window.document.createElement)
-	);
+	var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 
 	/**
 	 * Simple, lightweight module assisting with the detection and context of
@@ -1112,8 +1112,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  canUseWorkers: typeof Worker !== 'undefined',
 
-	  canUseEventListeners:
-	    canUseDOM && !!(window.addEventListener || window.attachEvent),
+	  canUseEventListeners: canUseDOM && !!(window.addEventListener || window.attachEvent),
 
 	  canUseViewport: canUseDOM && !!window.screen,
 
@@ -1123,9 +1122,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = ExecutionEnvironment;
 
-
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1175,7 +1173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = initialState;
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1227,7 +1225,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = defaultProps;
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -1281,7 +1279,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1296,11 +1294,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _objectAssign = __webpack_require__(6);
+	var _objectAssign = __webpack_require__(7);
 
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 
-	var _classnames = __webpack_require__(12);
+	var _classnames = __webpack_require__(13);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -1422,7 +1420,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Track = Track;
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1437,7 +1435,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(12);
+	var _classnames = __webpack_require__(13);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -1501,7 +1499,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.Dots = Dots;
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1518,7 +1516,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _classnames = __webpack_require__(12);
+	var _classnames = __webpack_require__(13);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -1618,10 +1616,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.NextArrow = NextArrow;
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var camel2hyphen = __webpack_require__(17);
+	var camel2hyphen = __webpack_require__(18);
 
 	var isDimension = function (feature) {
 	  var re = /[height|width]$/;
@@ -1674,7 +1672,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = json2mq;
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports) {
 
 	var camel2hyphen = function (str) {
@@ -1688,12 +1686,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = camel2hyphen;
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var canUseDOM = __webpack_require__(19);
-	var enquire = canUseDOM && __webpack_require__(20);
-	var json2mq = __webpack_require__(16);
+	var canUseDOM = __webpack_require__(20);
+	var enquire = canUseDOM && __webpack_require__(21);
+	var json2mq = __webpack_require__(17);
 
 	var ResponsiveMixin = {
 	  media: function (query, handler) {
@@ -1723,7 +1721,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = ResponsiveMixin;
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 	var canUseDOM = !!(
@@ -1735,7 +1733,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = canUseDOM;
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
